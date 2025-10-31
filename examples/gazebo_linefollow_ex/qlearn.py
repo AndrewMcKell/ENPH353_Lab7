@@ -1,5 +1,7 @@
 import random
 import pickle
+import csv
+import os
 
 
 class QLearn:
@@ -17,7 +19,7 @@ class QLearn:
         
         # TODO: Implement loading Q values from pickle file.
 
-        pkl_name = filename_base + ".pickle"
+        pkl_name = filename + ".pickle"
         if os.path.exists(pkl_name):
             with open(pkl_name, "rb") as f:
                 self.q = pickle.load(f)
@@ -33,8 +35,8 @@ class QLearn:
         '''
         # TODO: Implement saving Q values to pickle and CSV files.
 
-        pkl_name = filename_base + ".pickle"
-        csv_name = filename_base + ".csv"
+        pkl_name = filename + ".pickle"
+        csv_name = filename + ".csv"
 
         with open(pkl_name, "wb") as f:
             pickle.dump(self.q, f)
